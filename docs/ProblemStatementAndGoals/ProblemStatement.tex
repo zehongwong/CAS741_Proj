@@ -22,35 +22,54 @@
 \toprule
 \textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
 \midrule
-Date1 & Name(s) & Description of changes\\
-Date2 & Name(s) & Description of changes\\
-... & ... & ...\\
+January 19, 2023 & Zehong Wang & Initial Version\\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 \section{Problem Statement}
-
-\wss{You should check your problem statement with the
-\href{https://github.com/smiths/capTemplate/blob/main/docs/Checklists/ProbState-Checklist.pdf}
-{problem statement checklist}.}
-\wss{You can change the section headings, as long as you include the required information.}
-
 \subsection{Problem}
-
+The earth's population growth is a significant current issue. It is uncertain
+if the population will continue to rise or if it will reach a stabilization point.
+This software aims to understand the use of differential equations in modeling
+the growth of a population and assessing the accuracy of the models.
 \subsection{Inputs and Outputs}
-
-\wss{Characterize the problem in terms of ``high level'' inputs and outputs.  
-Use abstraction so that you can avoid details.}
-
+\subsubsection{Inputs}
+\begin{itemize}
+    \item The earth's population and related information in the past
+    \item Supervised datasets for \href{https://jacquescarette.github.io/Drasil/}{Drasil}
+\end{itemize}
+\subsubsection{Outputs}
+\begin{itemize}
+    \item Detailed Documents and Code that support population predicting
+    \item Exponential growth of population in the future
+    \item Logistic growth of population in the future
+\end{itemize}
 \subsection{Stakeholders}
+\begin{itemize}
+    \item Zehong Wang
+    \item Dr. Spencer Smith
+    \item Students in CAS741
+\end{itemize}
 
 \subsection{Environment}
 
-\wss{Hardware and software}
+This software can run on personal laptops or Cloud Virtual Machine, example details as follows:
+\begin{itemize}
+    \item Hardware: MacBook Air with M2 chip
+    \item Software: MacOS Ventura 13.1; Ubuntu 22.04 LTS on MultiPass VM
+\end{itemize}
 
 \section{Goals}
+\begin{itemize}
+    \item Capture knowledge through Drasil and generate documentation and code
+    \item Predict the growth of population by exponential model
+    \item Predict the growth of population by logistic model 
+\end{itemize}
 
 \section{Stretch Goals}
+\begin{itemize}
+    \item Extending Drasil tools such as \href{https://github.com/JacquesCarette/Drasil/wiki/Potential-Projects#generate-markdown}{Markdown Generating}
+\end{itemize}
 
 \end{document}
