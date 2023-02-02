@@ -128,7 +128,8 @@
 
 \begin{document}
 
-\title{Software Requirements Specification for \progname: subtitle describing software} 
+\title{Software Requirements Specification for \progname:
+A program for predicting future population} 
 \author{\authname}
 \date{\today}
 	
@@ -147,8 +148,9 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 1 & 1.0 & Notes\\
-Date 2 & 1.1 & Notes\\
+January 30, 2023 & 0.1 & Add two section: Introduction and General System Description \\
+January 30, 2023 & 0.2 & Add one section: General System Description and Specific System Description \\
+February 1, 2023 & 0.3 & Delete general comments\\
 \bottomrule
 \end{tabularx}
 
@@ -159,47 +161,44 @@ Date 2 & 1.1 & Notes\\
 This section records information for easy reference.
 
 \subsection{Table of Units}
+There is no special units for \progname{}.
+%Throughout this document SI (Syst\`{e}me International d'Unit\'{e}s) is employed
+%as the unit system.  In addition to the basic units, several derived units are
+%used as described below.  For each unit, the symbol is given followed by a
+%description of the unit and the SI name.
+%~\newline
 
-Throughout this document SI (Syst\`{e}me International d'Unit\'{e}s) is employed
-as the unit system.  In addition to the basic units, several derived units are
-used as described below.  For each unit, the symbol is given followed by a
-description of the unit and the SI name.
-~\newline
-
-\renewcommand{\arraystretch}{1.2}
+%\renewcommand{\arraystretch}{1.2}
 %\begin{table}[ht]
-  \noindent \begin{tabular}{l l l} 
-    \toprule		
-    \textbf{symbol} & \textbf{unit} & \textbf{SI}\\
-    \midrule 
-    \si{\metre} & length & metre\\
-    \si{\kilogram} & mass	& kilogram\\
-    \si{\second} & time & second\\
-    \si{\celsius} & temperature & centigrade\\
-    \si{\joule} & energy & joule\\
-    \si{\watt} & power & watt (W = \si{\joule\per\second})\\
-    \bottomrule
-  \end{tabular}
+%  \noindent \begin{tabular}{l l l} 
+%    \toprule		
+%    \textbf{symbol} & \textbf{unit} & \textbf{SI}\\
+%    \midrule 
+%    \si{P} & population & N/A \\
+%    \si{t} & time	& year \\
+%    \si{k} & constant of proportionality & N/A\\
+%    \bottomrule
+%  \end{tabular}
   %	\caption{Provide a caption}
 %\end{table}
 
-\plt{Only include the units that your SRS actually uses.}
+%\plt{Only include the units that your SRS actually uses.}
 
-\plt{Derived units, like newtons, pascal, etc, should show their derivation
-    (the units they are derived from) if their constituent units are in the
-    table of units (that is, if the units they are derived from are used in the
-    document).  For instance, the derivation of pascals as
-    $\si{\pascal}=\si{\newton\per\square\meter}$ is shown if newtons and m are
-    both in the table.  The derivations of newtons would not be shown if kg and
-    s are not both in the table.}
+%\plt{Derived units, like newtons, pascal, etc, should show their derivation
+%    (the units they are derived from) if their constituent units are in the
+%    table of units (that is, if the units they are derived from are used in the
+%    document).  For instance, the derivation of pascals as
+%    $\si{\pascal}=\si{\newton\per\square\meter}$ is shown if newtons and m are
+%    both in the table.  The derivations of newtons would not be shown if kg and
+%    s are not both in the table.}
 
-\plt{The symbol for units named after people use capital letters, but the name
-  of the unit itself uses lower case.  For instance, pascals use the symbol Pa,
-  watts use the symbol W, teslas use the symbol T, newtons use the symbol N,
-  etc.  The one exception to this is degree Celsius.  Details on writing metric
-  units can be found on the 
-  \href{https://www.nist.gov/pml/weights-and-measures/writing-metric-units}
-  {NIST} web-page.}
+%\plt{The symbol for units named after people use capital letters, but the name
+%  of the unit itself uses lower case.  For instance, pascals use the symbol Pa,
+%  watts use the symbol W, teslas use the symbol T, newtons use the symbol N,
+%  etc.  The one exception to this is degree Celsius.  Details on writing metric
+%  units can be found on the 
+%  \href{https://www.nist.gov/pml/weights-and-measures/writing-metric-units}
+%  {NIST} web-page.}
 
 \subsection{Table of Symbols}
 
@@ -213,15 +212,13 @@ systems.  The symbols are listed in alphabetical order.
 \noindent \begin{longtable*}{l l p{12cm}} \toprule
 \textbf{symbol} & \textbf{unit} & \textbf{description}\\
 \midrule 
-$A_C$ & \si[per-mode=symbol] {\square\metre} & coil surface area
-\\
-$A_\text{in}$ & \si[per-mode=symbol] {\square\metre} & surface area over 
-which heat is transferred in
-\\ 
+$P$ & N/A & population of the world \\
+$t$ & year & how many years after the year 2000 \\
+$k$ & N/A & constant of proportionality \\
 \bottomrule
 \end{longtable*}
-\plt{Use your problems actual symbols.  The si package is a good idea to use for
-  units.}
+%\plt{Use your problems actual symbols.  The si package is a good idea to use for
+%  units.}
 
 \subsection{Abbreviations and Acronyms}
 
@@ -239,104 +236,110 @@ which heat is transferred in
   PS & Physical System Description\\
   R & Requirement\\
   SRS & Software Requirements Specification\\
-  \progname{} & \plt{put an expanded version of your program name here (as appropriate)}\\
+  \progname{} & The program for predicting future population \\
+  %\plt{put an expanded version of your program name here (as appropriate)}\\
   T & Theoretical Model\\
   \bottomrule
 \end{tabular}\\
 
-\plt{Add any other abbreviations or acronyms that you add}
+%\plt{Add any other abbreviations or acronyms that you add}
 
 \subsection{Mathematical Notation}
+There is no extra mathematical notation for \progname{}.
+%\plt{This section is optional, but should be included for projects that make use
+%  of notation to convey mathematical information.  For instance, if typographic
+%  conventions (like bold face font) are used to distinguish matrices, this
+%  should be stated here.  If symbols are used to show mathematical operations,
+%  these should be summarized here.  In some cases the easiest way to summarize
+%  the notation is to point to a text or other source that explains the
+%  notation.}
 
-\plt{This section is optional, but should be included for projects that make use
-  of notation to convey mathematical information.  For instance, if typographic
-  conventions (like bold face font) are used to distinguish matrices, this
-  should be stated here.  If symbols are used to show mathematical operations,
-  these should be summarized here.  In some cases the easiest way to summarize
-  the notation is to point to a text or other source that explains the
-  notation.}
-
-\plt{This section was added to the template because some students use very
-  domain specific notation.  This notation will not be readily understandable to
-  people outside of your domain.  It should be explained.}
+%\plt{This section was added to the template because some students use very
+%  domain specific notation.  This notation will not be readily understandable to
+%  people outside of your domain.  It should be explained.}
 
 \newpage
 
 \pagenumbering{arabic}
 
-\plt{This SRS template is based on \citet{SmithAndLai2005, SmithEtAl2007}.  It
-  will get you started.  You should not modify the section headings, without
-  first discussing the change with the course instructor.  Modification means
-  you are not following the template, which loses some of the advantage of a
-  template, especially standardization.  Although the bits shown below do not
-  include type information, you may need to add this information for your
-  problem.  If you are unsure, please can ask the instructor.}
+%\plt{This SRS template is based on \citet{SmithAndLai2005, SmithEtAl2007}.  It
+%  will get you started.  You should not modify the section headings, without
+%  first discussing the change with the course instructor.  Modification means
+%  you are not following the template, which loses some of the advantage of a
+%  template, especially standardization.  Although the bits shown below do not
+%  include type information, you may need to add this information for your
+%  problem.  If you are unsure, please can ask the instructor.}
 
-\plt{Feel free to change the appearance of the report by modifying the LaTeX
-  commands.}
+%\plt{Feel free to change the appearance of the report by modifying the LaTeX
+%  commands.}
 
-\plt{This template document assumes that a single program is being documented.
-  If you are documenting a family of models, you should start with a commonality
-  analysis.  A separate template is provided for this.  For program
-  families you should look at \cite{Smith2006, SmithMcCutchanAndCarette2017}.
-  Single family member programs are often programs based on a single physical
-  model.  General purpose tools are usually documented as a family.  Families of
-  physical models also come up.}
+%\plt{This template document assumes that a single program is being documented.
+%  If you are documenting a family of models, you should start with a commonality
+%  analysis.  A separate template is provided for this.  For program
+%  families you should look at \cite{Smith2006, SmithMcCutchanAndCarette2017}.
+%  Single family member programs are often programs based on a single physical
+%  model.  General purpose tools are usually documented as a family.  Families of
+%  physical models also come up.}
 
-\plt{The SRS is not generally written, or read, sequentially.  The SRS is a
-  reference document.  It is generally read in an ad hoc order, as the need
-  arises.  For writing an SRS, and for reading one for the first time, the
-  suggested order of sections is:
-\begin{itemize}
-\item Goal Statement
-\item Instance Models
-\item Requirements
-\item Introduction
-\item Specific System Description
-\end{itemize}
-}
+%\plt{The SRS is not generally written, or read, sequentially.  The SRS is a
+%  reference document.  It is generally read in an ad hoc order, as the need
+%  arises.  For writing an SRS, and for reading one for the first time, the
+%  suggested order of sections is:
+%\begin{itemize}
+%\item Goal Statement
+%\item Instance Models
+%\item Requirements
+%\item Introduction
+%\item Specific System Description
+%\end{itemize}
+%}
 
-\plt{Guiding principles for the SRS document:
-\begin{itemize}
-\item Do not repeat the same information at the same abstraction level.  If
-  information is repeated, the repetition should be at a different abstraction
-  level.  For instance, there will be overlap between the scope section and the
-  assumptions, but the scope section will not go into as much detail as the
-  assumptions section.
-\end{itemize}
-}
+%\plt{Guiding principles for the SRS document:
+%\begin{itemize}
+%\item Do not repeat the same information at the same abstraction level.  If
+%  information is repeated, the repetition should be at a different abstraction
+%  level.  For instance, there will be overlap between the scope section and the
+%  assumptions, but the scope section will not go into as much detail as the
+%  assumptions section.
+%\end{itemize}
+%}
 
-\plt{The template description comments should be disabled before submitting this
-  document for grading.}
+%\plt{The template description comments should be disabled before submitting this
+%  document for grading.}
 
-\plt{You can borrow any wording from the text given in the template.  It is part
-  of the template, and not considered an instance of academic integrity.  Of
-  course, you need to cite the source of the template.}
+%\plt{You can borrow any wording from the text given in the template.  It is part
+%  of the template, and not considered an instance of academic integrity.  Of
+%  course, you need to cite the source of the template.}
 
-\plt{When the documentation is done, it should be possible to trace back to the
-  source of every piece of information.  Some information will come from
-  external sources, like terminology.  Other information will be derived, like
-  General Definitions.}
+%\plt{When the documentation is done, it should be possible to trace back to the
+%  source of every piece of information.  Some information will come from
+%  external sources, like terminology.  Other information will be derived, like
+%  General Definitions.}
 
-\plt{An SRS document should have the following qualities: unambiguous,
-  consistent, complete, validatable, abstract and traceable.}
+%\plt{An SRS document should have the following qualities: unambiguous,
+%  consistent, complete, validatable, abstract and traceable.}
 
-\plt{The overall goal of the SRS is that someone that meets the Characteristics
-  of the Intended Reader (Section~\ref{sec_IntendedReader}) can learn,
-  understand and verify the captured domain knowledge.  They should not have to
-  trust the authors of the SRS on any statements.  They should be able to
-  independently verify/derive every statement made.}
+%\plt{The overall goal of the SRS is that someone that meets the Characteristics
+%  of the Intended Reader (Section~\ref{sec_IntendedReader}) can learn,
+%  understand and verify the captured domain knowledge.  They should not have to
+%  trust the authors of the SRS on any statements.  They should be able to
+%  independently verify/derive every statement made.}
 
 \section{Introduction}
 
-\plt{The introduction section is written to introduce the problem.  It starts
-  general and focuses on the problem domain. The general advice is to start with
-a paragraph or two that describes the problem, followed by a ``roadmap''
-paragraph.  A roadmap orients the reader by telling them what sub-sections to
-expect in the Introduction section.}
+The earth's population growth is a significant current issue. It is uncertain
+if the population will continue to rise or if it will reach a stabilization point.
+As for this problem, we could use differential equations to predict the population
+in the future based on exponential and logistic model.
+
+%\plt{The introduction section is written to introduce the problem.  It starts
+%  general and focuses on the problem domain. The general advice is to start with
+%a paragraph or two that describes the problem, followed by a ``roadmap''
+%paragraph.  A roadmap orients the reader by telling them what sub-sections to
+%expect in the Introduction section.}
 
 \subsection{Purpose of Document}
-
+TODO
 \plt{This section summarizes the purpose of the SRS document.  It does not focus
   on the problem itself.  The problem is described in the ``Problem
   Description'' section (Section~\ref{Sec_pd}).  The purpose is for the document
@@ -348,38 +351,45 @@ expect in the Introduction section.}
   etc.}
 
 \subsection{Scope of Requirements} 
+The scope of requirements is to predict the population based on exponential model
+and logistic model. The exponential model takes into account solely the intrinsic
+factors, whereas the logistic model takes into consideration both intrinsic factors
+and one external factors.
 
-\plt{Modelling the real world requires simplification.  The full complexity of
-  the actual physics, chemistry, biology is too much for existing models, and
-  for existing computational solution techniques.  Rather than say what is in
-  the scope, it is usually easier to say what is not.  You can think of it as
-  the scope is initially everything, and then it is constrained to create the
-  actual scope.  For instance, the problem can be restricted to 2 dimensions, or
-  it can ignore the effect of temperature (or pressure) on the material
-  properties, etc.}  
+%\plt{Modelling the real world requires simplification.  The full complexity of
+%  the actual physics, chemistry, biology is too much for existing models, and
+%  for existing computational solution techniques.  Rather than say what is in
+%  the scope, it is usually easier to say what is not.  You can think of it as
+%  the scope is initially everything, and then it is constrained to create the
+%  actual scope.  For instance, the problem can be restricted to 2 dimensions, or
+%  it can ignore the effect of temperature (or pressure) on the material
+%  properties, etc.}  
 
-\plt{The scope section is related to the assumptions section
-  (Section~\ref{sec_assumpt}).  However, the scope and the assumptions are not
-  at the same level of abstraction.  The scope is at a high level.  The focus is
-  on the ``big picture'' assumptions.  The assumptions section lists, and
-  describes, all of the assumptions.}
+%\plt{The scope section is related to the assumptions section
+%  (Section~\ref{sec_assumpt}).  However, the scope and the assumptions are not
+%  at the same level of abstraction.  The scope is at a high level.  The focus is
+%  on the ``big picture'' assumptions.  The assumptions section lists, and
+%  describes, all of the assumptions.}
 
 \subsection{Characteristics of Intended Reader} \label{sec_IntendedReader}
+The intended reader should has good understanding of mathematical modeling and
+possess a strong comprehension of advanced mathematics and linear algebr that
+are taught at undergraduate level.
 
-\plt{This section summarizes the skills and knowledge of the readers of the
-  SRS.  It does NOT have the same purpose as the ``User Characteristics''
-  section (Section~\ref{SecUserCharacteristics}).  The intended readers are the
-  people that will read, review and maintain the SRS.  They are the people that
-  will conceivably design the software that is intended to meet the
-  requirements.  The user, on the other hand, is the person that uses the
-  software that is built.  They may never read this SRS document.  Of course,
-  the same person could be a ``user'' and an ``intended reader.''}
+%\plt{This section summarizes the skills and knowledge of the readers of the
+%  SRS.  It does NOT have the same purpose as the ``User Characteristics''
+%  section (Section~\ref{SecUserCharacteristics}).  The intended readers are the
+%  people that will read, review and maintain the SRS.  They are the people that
+%  will conceivably design the software that is intended to meet the
+%  requirements.  The user, on the other hand, is the person that uses the
+%  software that is built.  They may never read this SRS document.  Of course,
+%  the same person could be a ``user'' and an ``intended reader.''}
 
-\plt{The intended reader characteristics should be written as unambiguously and
-  as specifically as possible.  Rather than say, the user should have an
-  understanding of physics, say what kind of physics and at what level.  For
-  instance, is high school physics adequate, or should the reader have had a
-  graduate course on advanced quantum mechanics?}
+%\plt{The intended reader characteristics should be written as unambiguously and
+%  as specifically as possible.  Rather than say, the user should have an
+%  understanding of physics, say what kind of physics and at what level.  For
+%  instance, is high school physics adequate, or should the reader have had a
+%  graduate course on advanced quantum mechanics?}
 
 \subsection{Organization of Document}
 
@@ -392,76 +402,72 @@ expect in the Introduction section.}
 
 This section provides general information about the system.  It identifies the
 interfaces between the system and its environment, describes the user
-characteristics and lists the system constraints.  \plt{This text can likely be
-  borrowed verbatim.}
+characteristics and lists the system constraints.
+%\plt{This text can likely be borrowed verbatim.}
 
-\plt{The purpose of this section is to provide general information about the
-  system so the specific requirements in the next section will be easier to
-  understand. The general system description section is designed to be
-  changeable independent of changes to the functional requirements documented in
-  the specific system description. The general system description provides a
-  context for a family of related models.  The general description can stay the
-  same, while specific details are changed between family members.}
+%\plt{The purpose of this section is to provide general information about the
+%  system so the specific requirements in the next section will be easier to
+%  understand. The general system description section is designed to be
+%  changeable independent of changes to the functional requirements documented in
+%  the specific system description. The general system description provides a
+%  context for a family of related models.  The general description can stay the
+%  same, while specific details are changed between family members.}
 
 \subsection{System Context}
 
-\plt{Your system context will include a figure that shows the abstract view of
-  the software.  Often in a scientific context, the program can be viewed
-  abstractly following the design pattern of Inputs $\rightarrow$ Calculations
-  $\rightarrow$ Outputs.  The system context will therefore often follow this
-  pattern.  The user provides inputs, the system does the calculations, and then
-  provides the outputs to the user.  The figure should not show all of the
-  inputs, just an abstract view of the main categories of inputs (like material
-  properties, geometry, etc.).  Likewise, the outputs should be presented from
-  an abstract point of view.  In some cases the diagram will show other external
-  entities, besides the user.  For instance, when the software product is a
-  library, the user will be another software program, not an actual end user.
-  If there are system constraints that the software must work with external
-  libraries, these libraries can also be shown on the System Context diagram.
-  They should only be named with a specific library name if this is required by
-  the system constraint.}
+%\plt{Your system context will include a figure that shows the abstract view of
+%  the software.  Often in a scientific context, the program can be viewed
+%  abstractly following the design pattern of Inputs $\rightarrow$ Calculations
+%  $\rightarrow$ Outputs.  The system context will therefore often follow this
+%  pattern.  The user provides inputs, the system does the calculations, and then
+%  provides the outputs to the user.  The figure should not show all of the
+%  inputs, just an abstract view of the main categories of inputs (like material
+%  properties, geometry, etc.).  Likewise, the outputs should be presented from
+%  an abstract point of view.  In some cases the diagram will show other external
+%  entities, besides the user.  For instance, when the software product is a
+%  library, the user will be another software program, not an actual end user.
+%  If there are system constraints that the software must work with external
+%  libraries, these libraries can also be shown on the System Context diagram.
+%  They should only be named with a specific library name if this is required by
+%  the system constraint.}
 
 \begin{figure}[h!]
 \begin{center}
- \includegraphics[width=0.6\textwidth]{SystemContextFigure}
+ \includegraphics[width=0.8\textwidth]{SystemContextFigure}
 \caption{System Context}
 \label{Fig_SystemContext} 
 \end{center}
 \end{figure}
 
-\plt{For each of the entities in the system context diagram its responsibilities
-  should be listed.  Whenever possible the system should check for data quality,
-  but for some cases the user will need to assume that responsibility.  The list
-  of responsibilites should be about the inputs and outputs only, and they
-  should be abstract.  Details should not be presented here.  However, the
-  information should not be so abstract as to just say ``inputs'' and
-  ``outputs''.  A summarizing phrase can be used to characterize the inputs.
-  For instance, saying ``material properties'' provides some information, but it
-  stays away from the detail of listing every required properties.}
+%\plt{For each of the entities in the system context diagram its responsibilities
+%  should be listed.  Whenever possible the system should check for data quality,
+%  but for some cases the user will need to assume that responsibility.  The list
+%  of responsibilites should be about the inputs and outputs only, and they
+%  should be abstract.  Details should not be presented here.  However, the
+%  information should not be so abstract as to just say ``inputs'' and
+%  ``outputs''.  A summarizing phrase can be used to characterize the inputs.
+%  For instance, saying ``material properties'' provides some information, but it
+%  stays away from the detail of listing every required properties.}
 
 \begin{itemize}
 \item User Responsibilities:
 \begin{itemize}
-\item 
+\item Provide target year
+\item Provide target population
 \end{itemize}
 \item \progname{} Responsibilities:
 \begin{itemize}
 \item Detect data type mismatch, such as a string of characters instead of a
   floating point number
-\item 
+\item Predict population for an targeted year
+\item Predict how soon will it take to reach the target population
+\item Return the output value
 \end{itemize}
 \end{itemize}
 
 \subsection{User Characteristics} \label{SecUserCharacteristics}
 
-\plt{This section summarizes the knowledge/skills expected of the user.
-  Measuring usability, which is often a required non-function requirement,
-  requires knowledge of a typical user.  As mentioned above, the user is a
-  different role from the ``intended reader,'' as given in
-  Section~\ref{sec_IntendedReader}.  As in Section~\ref{sec_IntendedReader}, the
-  user characteristics should be specific an unambiguous.  For instance, ``The
-  end user of \progname{} should have an understanding of undergraduate Level 1
-  Calculus and Physics.''}
+The user should have fundamental math knowledge.
 
 \subsection{System Constraints}
 
@@ -477,21 +483,24 @@ characteristics and lists the system constraints.  \plt{This text can likely be
 This section first presents the problem description, which gives a high-level
 view of the problem to be solved.  This is followed by the solution characteristics
 specification, which presents the assumptions, theories, definitions and finally
-the instance models.  \plt{Add any project specific details that are relevant
-  for the section overview.}
+the instance models.
+%\plt{Add any project specific details that are relevant
+%  for the section overview.}
 
 \subsection{Problem Description} \label{Sec_pd}
 
-\progname{} is intended to solve ... \plt{What problem does your program solve?
-The description here should be in the problem space, not the solution space.}
+\progname{} is intended to predict the world population in a future year or determine
+how soon will it reach a expected population.
+%\plt{What problem does your program solve?
+%The description here should be in the problem space, not the solution space.}
 
 \subsubsection{Terminology and  Definitions}
 
-\plt{This section is expressed in words, not with equations.  It provide the
-  meaning of the different words and phrases used in the domain of the problem.
-The terminology is used to introduce concepts from the world outside of the
-mathematical model  The terminology provides a real world connection to give the
-mathematical model meaning.}
+%\plt{This section is expressed in words, not with equations.  It provide the
+%  meaning of the different words and phrases used in the domain of the problem.
+%The terminology is used to introduce concepts from the world outside of the
+%mathematical model  The terminology provides a real world connection to give the
+%mathematical model meaning.}
 
 This subsection provides a list of terms that are used in the subsequent
 sections and their meaning, with the purpose of reducing ambiguity and making it
@@ -499,37 +508,42 @@ easier to correctly understand the requirements:
 
 \begin{itemize}
 
-\item 
+\item Exponential Growth: A pattern of growth in which a quantity increases at
+a rate proportional to its current value. In this type of growth, the growth rate
+remains constant over time, resulting in an exponential increase in the quantity
+\item Logistic Growth: A pattern of growth that levels off at a maximum value.
+This type of growth occurs when the increase in a population or quantity is limited
+by some external factor, such as available resources
 
 \end{itemize}
 
 \subsubsection{Physical System Description} \label{sec_phySystDescrip}
+There is no physical system elements for \progname{}.
+%\plt{The purpose of this section is to clearly and unambiguously state the
+%  physical system that is to be modelled. Effective problem solving requires a
+%  logical and organized approach. The statements on the physical system to be
+%  studied should cover enough information to solve the problem. The physical
+%  description involves element identification, where elements are defined as
+%  independent and separable items of the physical system. Some example elements
+%  include acceleration due to gravity, the mass of an object, and the size and
+%  shape of an object. Each element should be identified and labelled, with their
+%  interesting properties specified clearly. The physical description can also
+%  include interactions of the elements, such as the following: i) the
+%  interactions between the elements and their physical environment; ii) the
+%  interactions between elements; and, iii) the initial or boundary conditions.}
 
-\plt{The purpose of this section is to clearly and unambiguously state the
-  physical system that is to be modelled. Effective problem solving requires a
-  logical and organized approach. The statements on the physical system to be
-  studied should cover enough information to solve the problem. The physical
-  description involves element identification, where elements are defined as
-  independent and separable items of the physical system. Some example elements
-  include acceleration due to gravity, the mass of an object, and the size and
-  shape of an object. Each element should be identified and labelled, with their
-  interesting properties specified clearly. The physical description can also
-  include interactions of the elements, such as the following: i) the
-  interactions between the elements and their physical environment; ii) the
-  interactions between elements; and, iii) the initial or boundary conditions.}
+%The physical system of \progname{}, as shown in Figure~?,
+%includes the following elements:
 
-The physical system of \progname{}, as shown in Figure~?,
-includes the following elements:
+%\begin{itemize}
 
-\begin{itemize}
+%\item[PS1:] 
 
-\item[PS1:] 
+%\item[PS2:] ...
 
-\item[PS2:] ...
+%\end{itemize}
 
-\end{itemize}
-
-\plt{A figure here makes sense for most SRS documents}
+%\plt{A figure here makes sense for most SRS documents}
 
 % \begin{figure}[h!]
 % \begin{center}
@@ -543,23 +557,43 @@ includes the following elements:
 
 \subsubsection{Goal Statements}
 
-\plt{The goal statements refine the ``Problem Description''
-  (Section~\ref{Sec_pd}).  A goal is a functional objective the system under
-  consideration should achieve. Goals provide criteria for sufficient
-  completeness of a requirements specification and for requirements
-  pertinence. Goals will be refined in Section “Instanced Models”
-  (Section~\ref{sec_instance}). Large and complex goals should be decomposed
-  into smaller sub-goals.  The goals are written abstractly, with a minimal
-  amount of technical language.  They should be understandable by non-domain
-  experts.}
+%\plt{The goal statements refine the ``Problem Description''
+%  (Section~\ref{Sec_pd}).  A goal is a functional objective the system under
+%  consideration should achieve. Goals provide criteria for sufficient
+%  completeness of a requirements specification and for requirements
+%  pertinence. Goals will be refined in Section “Instanced Models”
+%  (Section~\ref{sec_instance}). Large and complex goals should be decomposed
+%  into smaller sub-goals.  The goals are written abstractly, with a minimal
+%  amount of technical language.  They should be understandable by non-domain
+%  experts.}
 
-\noindent Given the \plt{inputs}, the goal statements are:
+\noindent Given a year in the future, the goal statements are:
 
 \begin{itemize}
 
-\item[GS\refstepcounter{goalnum}\thegoalnum \label{G_meaningfulLabel}:] \plt{One
-    sentence description of the goal.  There may be more than one.  Each Goal
-    should have a meaningful label.}
+\item[GS\refstepcounter{goalnum}\thegoalnum \label{G_meaningfulLabel}:] Predict the
+population in a future year based on exponential model
+\item[GS\refstepcounter{goalnum}\thegoalnum \label{G_meaningfulLabel}:] Predict the
+population in a future year based on logistic model
+
+%\plt{One
+%    sentence description of the goal.  There may be more than one.  Each Goal
+%    should have a meaningful label.}
+
+\end{itemize}
+
+\noindent Given an expected population, the goal statements are:
+
+\begin{itemize}
+
+\item[GS\refstepcounter{goalnum}\thegoalnum \label{G_meaningfulLabel}:] Determinie how
+soon will it reach the expected population based on exponential model
+\item[GS\refstepcounter{goalnum}\thegoalnum \label{G_meaningfulLabel}:] Determinie how
+soon will it reach the expected population based on logistic model
+
+%\plt{One
+%    sentence description of the goal.  There may be more than one.  Each Goal
+%    should have a meaningful label.}
 
 \end{itemize}
 
@@ -618,14 +652,6 @@ models can be verified.
 
 \subsubsection{Assumptions} \label{sec_assumpt}
 
-\plt{The assumptions are a refinement of the scope.  The scope is general, where
-  the assumptions are specific.  All assumptions should be listed, even those
-  that domain experts know so well that they are rarely (if ever) written down.}
-\plt{The document should not take for granted that the reader knows which
-  assumptions have been made. In the case of unusual assumptions, it is
-  recommended that the documentation either include, or point to, an explanation
-  and justification for the assumption.}
-
 This section simplifies the original problem and helps in developing the
 theoretical model by filling in the missing information for the physical
 system. The numbers given in the square brackets refer to the theoretical model
@@ -635,48 +661,41 @@ likely change [LC], in which the respective assumption is used.
 \begin{itemize}
 
 \item[A\refstepcounter{assumpnum}\theassumpnum \label{A_meaningfulLabel}:]
-  \plt{Short description of each assumption.  Each assumption
-    should have a meaningful label.  Use cross-references to identify the
-    appropriate traceability to T, GD, DD etc., using commands like dref, ddref
-    etc.  Each assumption should be atomic - that is, there should not be an
-    explicit (or implicit) ``and'' in the text of an assumption.}
+The rate of growth of a population is proportional to the population
+\item[A\refstepcounter{assumpnum}\theassumpnum \label{A_meaningfulLabel}:]
+The per capita growth rate decreases as the population grows
+\item[A\refstepcounter{assumpnum}\theassumpnum \label{A_meaningfulLabel}:]
+Build approximate linear equation for A2 based on past population data
+
+
+ % \plt{Short description of each assumption.  Each assumption
+ %   should have a meaningful label.  Use cross-references to identify the
+ %   appropriate traceability to T, GD, DD etc., using commands like dref, ddref
+ %   etc.  Each assumption should be atomic - that is, there should not be an
+ %   explicit (or implicit) ``and'' in the text of an assumption.}
 
 \end{itemize}
 
 \subsubsection{Theoretical Models}\label{sec_theoretical}
 
-\plt{Theoretical models are sets of abstract mathematical equations or axioms
-  for solving the problem described in Section ``Physical System Description''
-  (Section~\ref{sec_phySystDescrip}). Examples of theoretical models are
-  physical laws, constitutive equations, relevant conversion factors, etc.}
-
 This section focuses on the general equations and laws that \progname{} is based
-on.  \plt{Modify the examples below for your problem, and add additional models
-  as appropriate.}
+on.
 
 ~\newline
 
 \noindent
 \deftheory
 % #2 refname of theory
-{T:COE}
+{T:E}
 % #3 label
-{Conservation of thermal energy}
+{Exponential Differential Equation}
 % #4 equation
 {
-  $-{\bf \nabla \cdot q} + g$ = $\rho C \frac{\partial T}{\partial t}$
+  $ \frac{dP}{dt}=kP$
 }
 % #5 description
 {
-  The above equation gives the conservation of energy for transient heat transfer in a material
-  of specific heat capacity $C$ (\si{\joule\per\kilogram\per\celsius}) and density $\rho$ 
-  (\si{\kilogram\per\cubic\metre}), where $\bf q$ is the thermal flux vector (\si{\watt\per\square\metre}),
-  $g$ is the volumetric heat generation
-  (\si{\watt\per\cubic\metre}), $T$ is the temperature
-  (\si{\celsius}),  $t$ is time (\si{\second}), and $\nabla$ is
-  the gradient operator.  For this equation to apply, other forms
-  of energy, such as mechanical energy, are assumed to be negligible in the
-  system (\aref{A_OnlyThermalEnergy}).  In general, the material properties ($\rho$ and $C$) depend on temperature.
+  todo
 }
 % #6 Notes
 {
@@ -684,7 +703,7 @@ None.
 }
 % #7 Source
 {
-  \url{http://www.efunda.com/formulae/heat_transfer/conduction/overview_cond.cfm}
+  \url{shorturl.at/aAGW6}
 }
 % #8 Referenced by
 {
@@ -697,31 +716,46 @@ None
 % #1 derivation - not applicable by default
 {}
 
-\plt{``Ref.\ By'' is used repeatedly with the different types of information.
-  This stands for Referenced By.  It means that the models, definitions and
-  assumptions listed reference the current model, definition or assumption.
-  This information is given for traceability.  Ref. By provides a pointer in the
-  opposite direction to what we commonly do.  You still need to have a reference
-  in the other direction pointing to the current model, definition or
-  assumption.  As an example, if T1 is referenced by G2, that means that G2 will
-  explicitly include a reference to T1.}
+\noindent
+\deftheory
+% #2 refname of theory
+{T:L}
+% #3 label
+{Logistic Differential Equation}
+% #4 equation
+{
+  $ \frac{dP}{dt}=kP(N-P)$
+}
+% #5 description
+{
+  todo
+}
+% #6 Notes
+{
+None.
+}
+% #7 Source
+{
+  \url{shorturl.at/aAGW6}
+}
+% #8 Referenced by
+{
+  \dref{ROCT}
+}
+% #9 Preconditions
+{
+None
+}
+% #1 derivation - not applicable by default
+{}
 
 ~\newline
 
 \subsubsection{General Definitions}\label{sec_gendef}
 
-\plt{General Definitions (GDs) are a refinement of one or more TMs, and/or of
-  other GDs.  The GDs are less abstract than the TMs.  Generally the reduction
-  in abstraction is possible through invoking (using/referencing) Assumptions.
-  For instance, the TM could be Newton's Law of Cooling stated abstracting.  The
-  GD could take the general law and apply it to get a 1D equation.}
-
 This section collects the laws and equations that will be used in building the
 instance models.
 
-\plt{Some projects may not have any content for this section, but the section
-  heading should be kept.}  \plt{Modify the examples below for your problem, and
-  add additional definitions as appropriate.}
 
 ~\newline
 
@@ -733,25 +767,42 @@ instance models.
 \rowcolor[gray]{0.9}
 Number& GD\refstepcounter{defnum}\thedefnum \label{NL}\\
 \hline
-Label &\bf Newton's law of cooling \\
+Label &\bf Exponential Population Growth \\
 \hline
 % Units&$MLt^{-3}T^0$\\
 % \hline
-SI Units&\si{\watt\per\square\metre}\\
+SI Units& N/A \\
 \hline
-Equation&$ q(t) = h \Delta T(t)$  \\
+Equation&$ a=b $  \\
 \hline
-Description &
-Newton's law of cooling describes convective cooling from a surface.  The law is
-stated as: the rate of heat loss from a body is proportional to the difference
-in temperatures between the body and its surroundings.
-\\
-& $q(t)$ is the thermal flux (\si{\watt\per\square\metre}).\\
-& $h$ is the heat transfer coefficient, assumed independent of $T$ (\aref{A_hcoeff})
-	(\si{\watt\per\square\metre\per\celsius}).\\
-&$\Delta T(t)$= $T(t) - T_{\text{env}}(t)$ is the time-dependent thermal gradient
-between the environment and the object (\si{\celsius}).
-\\
+Description & TODO \\
+\hline
+  Source & Citation here \\
+  \hline
+  Ref.\ By & \ddref{FluxCoil}, \ddref{FluxPCM}\\
+  \hline
+\end{tabular}
+\end{minipage}\\
+
+~\newline
+
+\noindent
+\begin{minipage}{\textwidth}
+\renewcommand*{\arraystretch}{1.5}
+\begin{tabular}{| p{\colAwidth} | p{\colBwidth}|}
+\hline
+\rowcolor[gray]{0.9}
+Number& GD\refstepcounter{defnum}\thedefnum \label{NL}\\
+\hline
+Label &\bf Logistic Population Growth \\
+\hline
+% Units&$MLt^{-3}T^0$\\
+% \hline
+SI Units& N/A \\
+\hline
+Equation&$ P(t) = \frac{12.5}{1.0546e^{-0.025t}+1} $  \\
+\hline
+Description & TODO \\
 \hline
   Source & Citation here \\
   \hline
